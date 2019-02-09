@@ -16,9 +16,9 @@ from yolo3.utils import get_random_data
 def _main():
     annotation_path = '/content/drive/My Drive/Train dataset/train.txt'
     log_dir = 'logs/000/'
-    classes_path = '/content/drive/My Drive/Train dataset/class.txt'
+    #classes_path = '/content/drive/My Drive/Train dataset/class.txt'
     anchors_path = '/content/keras-yolo3/keras-yolo3-master/model_data/yolo_anchors.txt'
-    class_names = get_classes(classes_path)
+    class_names = ['0']
     num_classes = len(class_names)
     anchors = get_anchors(anchors_path)
 
@@ -87,10 +87,10 @@ def _main():
     # Further training if needed.
 
 
-def get_classes(classes_path):
+def get_classes():
     '''loads the classes'''
-    with open(classes_path) as f:
-        class_names = f.readlines()
+    #with open(classes_path) as f:
+        #class_names = f.readlines()
     class_names = [c.strip() for c in class_names]
     return class_names
 
